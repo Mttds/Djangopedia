@@ -1,0 +1,16 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+    <h1>{{ header1 }}</h1>
+
+    <ul class="list-group list-group-flush">
+        {% for entry in entries %}
+            <li class="list-group-item list-group-item-action list-group-item-secondary"><a href="{% url 'encyclopedia:entry' title=entry %}">{{ entry }}</a></li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
